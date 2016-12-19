@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>合作方后台-订单管理</title>
+
+    <!-- Bootstrap -->
+    <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="wrapper">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>-->
+                <span class="navbar-sidebar-toggle" data-toggle="tooltip" data-placement="right" title="菜单栏收缩或展开"><i class="fa fa-bars" aria-hidden="true"></i></span>
+                <a class="navbar-brand" href="#">Simple Admin</a>
+            </div>
+
+            <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </div>-->
+
+            <div class="navbar-end">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="navbar-dropdownmenu" data-toggle="dropdown">
+                        <img src="./images/avatar-mini.jpg" alt="Admin">
+                        管理员
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="navbar-dropdownmenu">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">设置</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="login.html">退出登录</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <aside class="sidebar-menu">
+        <div class="separator-50"></div>
+
+        <ul class="menu-list">
+            <li class="menu-item">
+                <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>首页</a>
+            </li>
+            <li class="separator-20"></li>
+            <li class="menu-item actived">
+                <a href="javascript:void(0)"><i class="fa fa-area-chart" aria-hidden="true"></i>订单管理</a>
+                <ul class="sub-menu-list">
+                    <li class="sub-menu-item"><a href="#">订单统计</a></li>
+                    <li class="sub-menu-item"><a href="#">提成统计</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="javascript:void(0)"><i class="fa fa-bomb" aria-hidden="true"></i>流量统计</a>
+            </li>
+            <li class="menu-item">
+                <a href="javascript:void(0)"><i class="fa fa-coffee" aria-hidden="true"></i>iframe管理</a>
+                <ul class="sub-menu-list">
+                    <li class="sub-menu-item"><a href="iframe-pc.html">PC版 接口</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="javascript:void(0)"><i class="fa fa-bell" aria-hidden="true"></i>系统公告</a>
+            </li>
+
+            <li class="separator-30"></li>
+
+            <li class="menu-item">
+                <a href="login.html"><i class="fa fa-sign-out" aria-hidden="true"></i>安全退出</a>
+            </li>
+
+        </ul>
+    </aside>
+
+    <div class="main-container">
+        <div class="padding">
+            <ol class="breadcrumb">
+                <li><a href="index.html">首页</a></li>
+                <li>订单管理</li>
+                <li class="active">订单统计</li>
+            </ol>
+            <div class="box">
+                <div class="heading">
+                    <h3 class="title">订单列表</h3>
+                </div>
+
+                <div class="box-inner">
+                    <form class="form-inline form-search" role="form">
+                        <div class="col-md-2 col-sm-4 col-xs-12">
+                            <div class="form-group">
+                                <label class="sr-only">订单号</label>
+                                <input type="text" class="form-control" placeholder="按订单号搜索">
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-12">
+                            <div class="form-group">
+                                <label class="sr-only">车牌号码</label>
+                                <input type="text" class="form-control" placeholder="按车牌号码搜索">
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-12">
+                            <div class="form-group">
+                                <label class="sr-only">手机号码</label>
+                                <input type="text" class="form-control" placeholder="按手机号码搜索">
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-12">
+                            <div class="form-group">
+                                <label class="sr-only">违章城市</label>
+                                <input type="text" class="form-control" placeholder="按违章城市搜索">
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-12">
+                            <div class="form-group">
+                                <label class="sr-only">车牌号码</label>
+                                <input type="password" class="form-control" placeholder="按车牌号码搜索">
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-12">
+                            <div class="form-group">
+                                <label class="sr-only">车牌号码</label>
+                                <input type="text" class="form-control input-daterange" placeholder="按车牌号码搜索">
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-12">
+                            <div class="form-group">
+                                <label class="sr-only">车牌号码</label>
+                                <input type="text" class="form-control" placeholder="按车牌号码搜索">
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-12">
+                            <div class="form-group">
+                                <label class="sr-only">车牌号码</label>
+                                <input type="text" class="form-control input-daterange" placeholder="按车牌号码搜索">
+                            </div>
+                        </div>
+
+
+                        <!--<div class="col-xs-12">-->
+                        <button type="submit" class="btn btn-default pull-right btn-search">搜索</button>
+                        <!--</div>-->
+                    </form>
+
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Header</th>
+                                <th>Header</th>
+                                <th>Header</th>
+                                <th>Header</th>
+                                <th>Handle</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1,001</td>
+                                <td>Lorem</td>
+                                <td>ipsum</td>
+                                <td>dolor</td>
+                                <td>sit</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,002</td>
+                                <td>amet</td>
+                                <td>consectetur</td>
+                                <td>adipiscing</td>
+                                <td>elit</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,003</td>
+                                <td>Integer</td>
+                                <td>nec</td>
+                                <td>odio</td>
+                                <td>Praesent</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,003</td>
+                                <td>libero</td>
+                                <td>Sed</td>
+                                <td>cursus</td>
+                                <td>ante</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,004</td>
+                                <td>dapibus</td>
+                                <td>diam</td>
+                                <td>Sed</td>
+                                <td>nisi</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,005</td>
+                                <td>Nulla</td>
+                                <td>quis</td>
+                                <td>sem</td>
+                                <td>at</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,006</td>
+                                <td>nibh</td>
+                                <td>elementum</td>
+                                <td>imperdiet</td>
+                                <td>Duis</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,007</td>
+                                <td>sagittis</td>
+                                <td>ipsum</td>
+                                <td>Praesent</td>
+                                <td>mauris</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,008</td>
+                                <td>Fusce</td>
+                                <td>nec</td>
+                                <td>tellus</td>
+                                <td>sed</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,009</td>
+                                <td>augue</td>
+                                <td>semper</td>
+                                <td>porta</td>
+                                <td>Mauris</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,010</td>
+                                <td>massa</td>
+                                <td>Vestibulum</td>
+                                <td>lacinia</td>
+                                <td>arcu</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,011</td>
+                                <td>eget</td>
+                                <td>nulla</td>
+                                <td>Class</td>
+                                <td>aptent</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,012</td>
+                                <td>taciti</td>
+                                <td>sociosqu</td>
+                                <td>ad</td>
+                                <td>litora</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,013</td>
+                                <td>torquent</td>
+                                <td>per</td>
+                                <td>conubia</td>
+                                <td>nostra</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <nav class="text-center">
+                        <ul class="pagination">
+                            <li><a href="#">&laquo;</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">&raquo;</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="heading">
+                    <h3 class="title">订单统计</h3>
+                </div>
+
+                <div class="box-inner">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Header</th>
+                                <th>Header</th>
+                                <th>Header</th>
+                                <th>Header</th>
+                                <th>Handle</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1,001</td>
+                                <td>Lorem</td>
+                                <td>ipsum</td>
+                                <td>dolor</td>
+                                <td>sit</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,002</td>
+                                <td>amet</td>
+                                <td>consectetur</td>
+                                <td>adipiscing</td>
+                                <td>elit</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,003</td>
+                                <td>Integer</td>
+                                <td>nec</td>
+                                <td>odio</td>
+                                <td>Praesent</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,003</td>
+                                <td>libero</td>
+                                <td>Sed</td>
+                                <td>cursus</td>
+                                <td>ante</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,004</td>
+                                <td>dapibus</td>
+                                <td>diam</td>
+                                <td>Sed</td>
+                                <td>nisi</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,005</td>
+                                <td>Nulla</td>
+                                <td>quis</td>
+                                <td>sem</td>
+                                <td>at</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,006</td>
+                                <td>nibh</td>
+                                <td>elementum</td>
+                                <td>imperdiet</td>
+                                <td>Duis</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,007</td>
+                                <td>sagittis</td>
+                                <td>ipsum</td>
+                                <td>Praesent</td>
+                                <td>mauris</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,008</td>
+                                <td>Fusce</td>
+                                <td>nec</td>
+                                <td>tellus</td>
+                                <td>sed</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,009</td>
+                                <td>augue</td>
+                                <td>semper</td>
+                                <td>porta</td>
+                                <td>Mauris</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,010</td>
+                                <td>massa</td>
+                                <td>Vestibulum</td>
+                                <td>lacinia</td>
+                                <td>arcu</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,011</td>
+                                <td>eget</td>
+                                <td>nulla</td>
+                                <td>Class</td>
+                                <td>aptent</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,012</td>
+                                <td>taciti</td>
+                                <td>sociosqu</td>
+                                <td>ad</td>
+                                <td>litora</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>1,013</td>
+                                <td>torquent</td>
+                                <td>per</td>
+                                <td>conubia</td>
+                                <td>nostra</td>
+                                <td><a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <nav class="text-center">
+                        <ul class="pagination">
+                            <li><a href="#">&laquo;</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">&raquo;</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-confirm">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Confirm</h4>
+            </div>
+            <div class="modal-body">
+                <p style="text-indent: 2em;">Are you sure？</p>
+                <input type="hidden">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary modal-btn-sure">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./assets/jquery/jquery-3.1.1.min.js"></script>
+<script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="./assets/bootstrap-daterangepicker/moment.min.js"></script>
+<script src="./assets/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="./js/main.js"></script>
+<script>
+    $(function() {
+
+        $('.input-daterange').setDateRangePicker(function(startTime, endTime) {
+            console.log(startTime, endTime);
+        });
+
+        $('.link-show-confirm').showConfirm({
+            success: function(url) {
+                console.log(url);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    });
+</script>
+</body>
+</html>

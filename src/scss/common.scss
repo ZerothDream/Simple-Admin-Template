@@ -1,0 +1,398 @@
+@import "config";
+@import "func";
+
+html, body {
+  height: 100%;
+}
+body {
+  font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei";
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+
+/** ============== 覆盖Bootstrap中的样式 ============== **/
+/**
+* 路径导航
+*/
+.breadcrumb {
+  border-radius: 0;
+  background-color: white;
+  margin-bottom: 10px;
+}
+.input-group .input-group-addon {
+  border-radius: 0;
+}
+.alert,
+.form-control,
+.btn,
+.panel,
+.panel-heading {
+  border-radius: 0;
+}
+/**
+* 下拉菜单
+*/
+.dropdown-menu {
+  border-radius: 0;
+}
+.pagination>li:first-child>a, .pagination>li:first-child>span,
+.pagination>li:last-child>a, .pagination>li:last-child>span {
+  border-radius: 0;
+}
+/**
+* 徽章
+*/
+.badge {
+  background-color: map_get($theme, 'main');
+}
+/** ============== 覆盖Bootstrap中的样式 ============== **/
+
+
+/** ============== 基于Bootstrap中的样式组件定义 ============== **/
+.input-group-img {
+  .input-group-addon {
+    padding: 0;
+    height: 40px;
+
+    img {
+      min-height: 100%;
+      min-width: 100%;
+      height: 38px;
+    }
+  }
+}
+/** ============== 基于Bootstrap中的样式组件定义 ============== **/
+
+
+
+/** ============== 网站公共样式定义 ============== **/
+.padding {
+  padding: 15px;
+}
+
+/* 分割线 */
+.separator-10 {
+  @include buildSeparator(10px);
+}
+.separator-20 {
+  @include buildSeparator(20px);
+}
+.separator-30 {
+  @include buildSeparator(20px);
+}
+.separator-50 {
+  @include buildSeparator(50px);
+}
+
+/* 盒子 */
+.box {
+  background-color: white;
+  /*border: 1px solid #ddd;*/
+  margin-bottom: 20px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  min-height: 200px;
+  overflow: auto;
+
+  &>.heading {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+
+    &>.title {
+      border-left: 5px solid map_get($theme, 'main');
+      padding-left: 2em;
+      margin: 0;
+      font-size: 14px;
+
+      .link-right {
+        float: right;
+        margin-right: 20px;
+      }
+    }
+
+  }
+
+  &>.box-inner {
+    padding: 20px;
+  }
+}
+
+/* 全选复选框，以及对应的子复选框 */
+input[type=checkbox] {
+  &.all-cb, &.child-cb {
+    width: 16px;
+    height: 16px;
+  }
+}
+/** ============== 网站公共样式定义 ============== **/
+
+/** ============== 网站整体布局设置 ============== **/
+// 顶部导航
+.navbar {
+  .navbar-header {
+    float: left;
+  }
+
+  .navbar-sidebar-toggle {
+    float: left;
+    font-size: 25px;
+    line-height: 50px;
+    margin-left: 10px;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+
+  .navbar-end {
+    float: right;
+
+    .dropdown-toggle {
+      padding: 4px 12px;
+      background-color: transparent;
+      margin-top: 2px;
+    }
+  }
+}
+
+// 左侧导航栏 和 主体容器 的容器
+.wrapper {
+  position: relative;
+  /*overflow: hidden;*/
+  padding-top: 51px;
+  height: 100%;
+  /*padding-bottom: 45px;*/
+  background-color: map_get($sideMenu, 'background');
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// 页面侧边栏
+.sidebar-menu {
+  position: absolute;
+  display: block;
+  float: left;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  /*border-right: 1px solid map_get($sideMenu, 'background');*/
+  padding-top: 54px;
+  padding-bottom: 35px;
+  width: 240px;
+  /*background-color: #1c2b36;*/
+  height: 100%;
+  transition: left .5s ease;
+  -webkit-transition: left .5s ease;
+  -moz-transition: left .5s ease;
+  -ms-transition: left .5s ease;
+  -o-transition: left .5s ease;
+
+  .menu-list {
+    list-style: none;
+    a {
+      color: white;
+    }
+
+    &>.menu-item {
+      position: relative;
+      overflow: hidden;
+
+      &>a {
+        position: relative;
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        overflow: hidden;
+        padding: 0 10px;
+        transition: background-color .3s ease;
+        -webkit-transition: background-color .3s ease;
+        -moz-transition: background-color .3s ease;
+        -ms-transition: background-color .3s ease;
+        -o-transition: background-color .3s ease;
+
+        &:before {
+          visibility: hidden;
+          opacity: 0;
+          content: ' ';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          width: 5px;
+          height: 100%;
+          border-left: 5px solid #4ec3ff;
+        }
+        &>i {
+          margin: 0 1em;
+        }
+
+        &:focus {
+          text-decoration: none;
+        }
+        &:hover {
+          text-decoration: none;
+          background-color: map_get($sideMenu, 'menuItemBg');
+        }
+        &:hover:before {
+          visibility: visible;
+          opacity: 1;
+        }
+        &:hover i {
+          color: #7ca0bb;
+        }
+      }
+
+      &.actived>a {
+        background-color: map_get($sideMenu, 'menuItemBg');
+      }
+      &.actived>a:before {
+        visibility: visible;
+        opacity: 1;
+      }
+      &.actived>.sub-menu-list {
+        height: auto;
+      }
+    }
+
+    .sub-menu-list {
+      height: 0;
+      -webkit-transition: height 0.3s;
+      -moz-transition: height 0.3s;
+      -ms-transition: height 0.3s;
+      -o-transition: height 0.3s;
+      transition: height 0.3s;
+
+      &>.sub-menu-item {
+        &>a {
+          display: block;
+          width: 100%;
+          height: 30px;
+          line-height: 30px;
+          text-align: center;
+          position: relative;
+        }
+        &>a:hover:before {
+          display: block;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          border-left: 5px solid red;
+          width: 5px;
+          content: ' ';
+        }
+      }
+    }
+  }
+
+  &.collapsed {
+    width: 60px;
+
+    .menu-list {
+      .menu-item {
+        overflow: visible;
+      }
+      .sub-menu-list {
+        position: absolute;
+        left: 60px;
+        top: 0;
+        background-color: #1c2b36;
+        width: 180px;
+        overflow: hidden;
+        margin-left: 15px;
+
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .menu-item.actived>.sub-menu-list {
+        padding: 10px 0;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+// 页面主容器
+.main-container {
+  position: relative;
+  margin-left: 240px;
+  min-height: 100%;
+  background-color: map_get($theme, 'containerBg');
+  right: 0;
+  left: 0;
+  transition: left .5s ease;
+  -webkit-transition: left .5s ease;
+  -moz-transition: left .5s ease;
+  -ms-transition: left .5s ease;
+  -o-transition: left .5s ease;
+
+  &>.padding {
+    background-color: map_get($theme, 'containerBg');
+  }
+
+  &.stretched {
+    margin-left: 60px;
+  }
+}
+//******** 这一小段代码有着神奇的效果 ************//
+@media screen and (max-width: 600px) {
+  .main-container {
+    margin-left: 0;
+    left: 240px;
+
+    &.stretched {
+      margin-left: 0;
+      left: 0;
+      z-index: 900;
+    }
+  }
+}
+//******** 这一小段代码有着神奇的效果 ************//
+
+// 页面footer
+.main-footer {
+  color: #ccc;
+  text-align: center;
+  padding: 15px 0;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+// 回到顶部
+.scroll-to-top {
+  position: fixed;
+  width: 45px;
+  height: 45px;
+  background-color: #2baab1;
+  color: white;
+  bottom: 60px;
+  text-align: center;
+  line-height: 45px;
+  cursor: pointer;
+  right: -60px;
+  -webkit-transition: right 0.3s;
+  -moz-transition: right 0.3s;
+  -ms-transition: right 0.3s;
+  -o-transition: right 0.3s;
+  transition: right 0.3s;
+  z-index: 1000;
+
+  &:hover {
+    background-color: #0f0f0f;
+  }
+
+  &.shown {
+    right: 30px;
+  }
+}
+/** ============== 网站整体布局设置 ============== **/

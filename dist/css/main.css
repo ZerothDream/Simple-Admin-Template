@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/*$sideMenu: (
+        background: #4ec3ff,
+        menuItemBg: #5095FE,
+        subMenuItemBg: ''
+);*/
+/** ============== 针对网站需求的逻辑样式定义 ============== **/
+.form-search {
+  margin-bottom: 20px;
+  overflow: hidden; }
+  .form-search .col-md-2, .form-search .col-sm-4, .form-search .col-xs-12 {
+    /*padding: 0;
+    margin-right: 5px;*/
+    margin-bottom: 8px; }
+  .form-search label {
+    margin-right: 5px; }
+  .form-search .form-group,
+  .form-search .form-control {
+    width: 100%; }
+  .form-search .btn-search {
+    margin-right: 15px; }
+
+/** ============== 针对网站需求的逻辑样式定义 ============== **/
