@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple Admin-空白页面</title>
+
+    <!-- Bootstrap -->
+    <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="wrapper">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <span class="navbar-sidebar-toggle" data-toggle="tooltip" data-placement="right" title="菜单栏收缩或展开"><i class="fa fa-bars" aria-hidden="true"></i></span>
+                <a class="navbar-brand" href="#">Simple Admin</a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="nav-notifications">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-noti" data-toggle="dropdown">
+                            <i class="fa fa-envelope fa-lg"></i>
+                            <span class="badge badge-terques">5</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-noti" data-toggle="dropdown">
+                            <i class="fa fa-bell fa-lg"></i>
+                            <span class="badge badge-yellow">3</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-noti" data-toggle="dropdown">
+                            <i class="fa fa-comments fa-lg"></i>
+                            <span class="badge badge-red">2</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="navbar-dropdownmenu" data-toggle="dropdown">
+                        <img src="./images/avatar-mini.jpg" alt="Admin">
+                        管理员
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="navbar-dropdownmenu">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">设置</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="login.html">退出登录</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <aside class="sidebar-menu">
+        <div class="separator-50"></div>
+
+        <ul class="menu-list">
+            <li class="menu-item">
+                <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>首页</a>
+            </li>
+            <li class="separator-20"></li>
+            <li class="menu-item actived">
+                <a href="javascript:void(0)"><i class="fa fa-cube" aria-hidden="true"></i>UI 控件</a>
+                <ul class="sub-menu-list">
+                    <li class="sub-menu-item"><a href="widget.html">小部件</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="javascript:void(0)"><i class="fa fa-book" aria-hidden="true"></i>其他页面</a>
+                <ul class="sub-menu-list">
+                    <li class="sub-menu-item"><a href="inbox.html">收件箱</a></li>
+                    <li class="sub-menu-item"><a href="table.html">表格</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="javascript:void(0)"><i class="fa fa-tag" aria-hidden="true"></i>更多页面 <span class="badge">4</span></a>
+                <ul class="sub-menu-list">
+                    <li class="sub-menu-item"><a href="blank.html">空白页面</a></li>
+                    <li class="sub-menu-item"><a href="login.html">登录页面</a></li>
+                    <li class="sub-menu-item"><a href="jump.html">跳转页面</a></li>
+                    <li class="sub-menu-item"><a href="404.html">404页面</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="javascript:void(0)"><i class="fa fa-list" aria-hidden="true"></i>一级菜单</a>
+                <ul class="sub-menu-list">
+                    <li class="sub-menu-item"><a href="#">二级菜单-1</a></li>
+                    <li class="sub-menu-item"><a href="#">二级菜单-2</a></li>
+                </ul>
+            </li>
+
+            <li class="separator-30"></li>
+
+            <li class="menu-item">
+                <a href="login.html"><i class="fa fa-sign-out" aria-hidden="true"></i>安全退出</a>
+            </li>
+
+        </ul>
+    </aside>
+
+    <div class="main-container">
+        <div class="padding">
+            <ol class="breadcrumb">
+                <li><a href="index.html">首页</a></li>
+                <li>UI 控件</li>
+                <li class="active">小部件</li>
+            </ol>
+            <div class="box">
+                <div class="box-inner">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <section class="box-label-block theme">
+                                <div class="symbol">
+                                    <i class="fa fa-rmb" aria-hidden="true"></i>
+                                </div>
+                                <div class="content">
+                                    <h4 class="title">总订单数</h4>
+                                    <p>1000</p>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <section class="box-label-block cyellow">
+                                <div class="symbol">
+                                    <i class="fa fa-tags" aria-hidden="true"></i>
+                                </div>
+                                <div class="content">
+                                    <h4 class="title">昨日订单数</h4>
+                                    <p>10</p>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <section class="box-label-block terques">
+                                <div class="symbol">
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                </div>
+                                <div class="content">
+                                    <h4 class="title">今日订单数</h4>
+                                    <p>33</p>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <section class="box-label-block cred">
+                                <div class="symbol">
+                                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                </div>
+                                <div class="content">
+                                    <h4 class="title">净增长率（今日/昨天）</h4>
+                                    <p>0.033%</p>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="heading">
+                    <h3 class="title">标签页<span class="box-toggle"><i class="fa fa-chevron-up"></i></span></h3>
+                </div>
+
+                <div class="box-inner">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Home</a></li>
+                        <li role="presentation"><a href="#profile" role="tab" data-toggle="tab" aria-controls="profile">Profile</a></li>
+                        <li role="presentation" class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
+                                <li><a href="#dropdown1" tabindex="-1" role="tab" data-toggle="tab" aria-controls="dropdown1">@fat</a></li>
+                                <li><a href="#dropdown2" tabindex="-1" role="tab" data-toggle="tab" aria-controls="dropdown2">@mdo</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+                            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
+                            <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="dropdown1" aria-labelledby="dropdown1-tab">
+                            <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="dropdown2" aria-labelledby="dropdown2-tab">
+                            <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box box-tabs-inline">
+                <div class="heading">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#home2" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Home</a></li>
+                        <li role="presentation"><a href="#profile2" role="tab" data-toggle="tab" aria-controls="profile">Profile</a></li>
+                        <li role="presentation" class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop2-contents">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop2-contents">
+                                <li><a href="#dropdown21" tabindex="-1" role="tab" data-toggle="tab" aria-controls="dropdown21">@fat</a></li>
+                                <li><a href="#dropdown22" tabindex="-1" role="tab" data-toggle="tab" aria-controls="dropdown22">@mdo</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <span class="box-toggle"><i class="fa fa-chevron-up"></i></span>
+                </div>
+
+                <div class="box-inner">
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="home2" aria-labelledby="home-tab">
+                            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="profile2" aria-labelledby="profile-tab">
+                            <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="dropdown21" aria-labelledby="dropdown1-tab">
+                            <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="dropdown22" aria-labelledby="dropdown2-tab">
+                            <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="heading">
+                    <h3 class="title">胶囊式标签页<span class="box-toggle"><i class="fa fa-chevron-up"></i></span></h3>
+                </div>
+
+                <div class="box-inner">
+                    <ul class="nav nav-pills" role="tablist">
+                        <li role="presentation" class="active"><a href="#home3" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Home</a></li>
+                        <li role="presentation"><a href="#profile3" role="tab" data-toggle="tab" aria-controls="profile">Profile</a></li>
+                        <li role="presentation" class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop3-contents">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop3-contents">
+                                <li><a href="#dropdown31" tabindex="-1" role="tab" data-toggle="tab" aria-controls="dropdown31">@fat</a></li>
+                                <li><a href="#dropdown32" tabindex="-1" role="tab" data-toggle="tab" aria-controls="dropdown32">@mdo</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="home3" aria-labelledby="home-tab">
+                            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="profile3" aria-labelledby="profile-tab">
+                            <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="dropdown31" aria-labelledby="dropdown31-tab">
+                            <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="dropdown32" aria-labelledby="dropdown32-tab">
+                            <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box box-tabs-inline">
+                <div class="heading">
+                    <ul class="nav nav-pills" role="tablist">
+                        <li role="presentation" class="active"><a href="#home4" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Home</a></li>
+                        <li role="presentation"><a href="#profile4" role="tab" data-toggle="tab" aria-controls="profile">Profile</a></li>
+                        <li role="presentation" class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop4-contents">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop4-contents">
+                                <li><a href="#dropdown41" tabindex="-1" role="tab" data-toggle="tab" aria-controls="dropdown41">@fat</a></li>
+                                <li><a href="#dropdown42" tabindex="-1" role="tab" data-toggle="tab" aria-controls="dropdown42">@mdo</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="box-inner">
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="home4" aria-labelledby="home-tab">
+                            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="profile4" aria-labelledby="profile-tab">
+                            <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="dropdown41" aria-labelledby="dropdown31-tab">
+                            <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="dropdown42" aria-labelledby="dropdown32-tab">
+                            <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="heading">
+                    <h3 class="title">警告框<span class="box-toggle"><i class="fa fa-chevron-up"></i></span></h3>
+                </div>
+
+                <div class="box-inner">
+                    <div class="alert alert-warning alert-dismissible fade in" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                        <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
+                    </div>
+
+                    <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                        <h4>Oh snap! You got an error!</h4>
+                        <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                        <p>
+                            <button type="button" class="btn btn-danger">Take this action</button>
+                            <button type="button" class="btn btn-default">Or do this</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="heading">
+                    <h3 class="title">手风琴效果<span class="box-toggle"><i class="fa fa-chevron-up"></i></span></h3>
+                </div>
+
+                <div class="box-inner">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Collapsible Group Item #1
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Collapsible Group Item #2
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Collapsible Group Item #3
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <p>937921168@qq.com DreamBoy 版权所有</p>
+    </footer>
+</div>
+
+<div class="scroll-to-top"><i class="fa fa-chevron-up fa-lg"></i></div>
+
+<script src="./assets/jquery/jquery-3.1.1.min.js"></script>
+<script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>
