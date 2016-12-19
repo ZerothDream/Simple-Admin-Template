@@ -30,7 +30,8 @@ ul, li {
 .form-control,
 .btn,
 .panel,
-.panel-heading {
+.panel-heading,
+.modal .modal-content {
   border-radius: 0;
 }
 /**
@@ -38,6 +39,14 @@ ul, li {
 */
 .dropdown-menu {
   border-radius: 0;
+}
+/**
+* 分页
+*/
+.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover,
+.pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
+  background-color: map_get($theme, 'main');
+  border-color: map_get($theme, 'main');
 }
 .pagination>li:first-child>a, .pagination>li:first-child>span,
 .pagination>li:last-child>a, .pagination>li:last-child>span {

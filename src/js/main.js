@@ -271,6 +271,4 @@ $(function() {
     $("[data-toggle='tooltip']").tooltip();
     // 初始化回到顶部按钮
     $('.scroll-to-top').initScrollToTop();
-
-
 });
