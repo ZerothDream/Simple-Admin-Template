@@ -170,6 +170,13 @@ ul, li {
     }
   }
 }
+@media screen and (max-width: 500px) {
+  .navbar {
+    .nav-notifications {
+      display: none;
+    }
+  }
+}
 
 // 左侧导航栏 和 主体容器 的容器
 .wrapper {
@@ -473,6 +480,7 @@ ul, li {
       border-bottom: 0;
       padding-top: 10px;
       position: relative;
+      overflow: hidden;
 
       .nav {
         padding-left: 20px;
@@ -520,6 +528,7 @@ ul, li {
   height: 100px;
   margin-bottom: 10px;
   cursor: pointer;
+  overflow: hidden;
 
   &.theme {
     .symbol {
