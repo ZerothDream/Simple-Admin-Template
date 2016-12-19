@@ -59,6 +59,12 @@ ul, li {
   background-color: #4ec3ff; }
 
 /** ============== 覆盖Bootstrap中的样式 ============== **/
+/** ============== 覆盖插件中的样式 ============== **/
+.daterangepicker .input-mini,
+.daterangepicker .input-mini.active {
+  border-radius: 0; }
+
+/** ============== 覆盖插件中的样式 ============== **/
 /** ============== 基于Bootstrap中的样式组件定义 ============== **/
 .input-group-img .input-group-addon {
   padding: 0;
@@ -69,61 +75,6 @@ ul, li {
     height: 38px; }
 
 /** ============== 基于Bootstrap中的样式组件定义 ============== **/
-/** ============== 网站公共样式定义 ============== **/
-.padding {
-  padding: 15px; }
-
-/* 分割线 */
-.separator-10 {
-  display: block;
-  width: 100%;
-  height: 10px; }
-
-.separator-20 {
-  display: block;
-  width: 100%;
-  height: 20px; }
-
-.separator-30 {
-  display: block;
-  width: 100%;
-  height: 20px; }
-
-.separator-50 {
-  display: block;
-  width: 100%;
-  height: 50px; }
-
-/* 盒子 */
-.box {
-  background-color: white;
-  /*border: 1px solid #ddd;*/
-  margin-bottom: 20px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  min-height: 200px;
-  overflow: auto; }
-  .box > .heading {
-    padding: 20px 0;
-    border-bottom: 1px solid #ddd; }
-    .box > .heading > .title {
-      border-left: 5px solid #4ec3ff;
-      padding-left: 2em;
-      margin: 0;
-      font-size: 14px; }
-      .box > .heading > .title .link-right {
-        float: right;
-        margin-right: 20px; }
-  .box > .box-inner {
-    padding: 20px; }
-
-/* 全选复选框，以及对应的子复选框 */
-input[type=checkbox].all-cb, input[type=checkbox].child-cb {
-  width: 16px;
-  height: 16px; }
-
-/** ============== 网站公共样式定义 ============== **/
 /** ============== 网站整体布局设置 ============== **/
 .navbar .navbar-header {
   float: left; }
@@ -227,8 +178,10 @@ input[type=checkbox].all-cb, input[type=checkbox].child-cb {
       .sidebar-menu .menu-list .sub-menu-list > .sub-menu-item > a {
         display: block;
         width: 100%;
-        height: 30px;
-        line-height: 30px;
+        /*height: 30px;
+          line-height: 30px;*/
+        height: 35px;
+        line-height: 35px;
         text-align: center;
         position: relative; }
       .sidebar-menu .menu-list .sub-menu-list > .sub-menu-item > a:hover:before {
@@ -309,3 +262,86 @@ input[type=checkbox].all-cb, input[type=checkbox].child-cb {
     right: 30px; }
 
 /** ============== 网站整体布局设置 ============== **/
+/** ============== 网站公共样式定义 ============== **/
+.padding {
+  padding: 15px; }
+
+/* 分割线 */
+.separator-10 {
+  display: block;
+  width: 100%;
+  height: 10px; }
+
+.separator-20 {
+  display: block;
+  width: 100%;
+  height: 20px; }
+
+.separator-30 {
+  display: block;
+  width: 100%;
+  height: 20px; }
+
+.separator-50 {
+  display: block;
+  width: 100%;
+  height: 50px; }
+
+/** ============== 网站公共样式定义 ============== **/
+/** ============== 网站的逻辑样式定义 ============== **/
+/* 盒子 */
+.box {
+  background-color: white;
+  /*border: 1px solid #ddd;*/
+  margin-bottom: 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  /*min-height: 200px;*/
+  overflow: auto; }
+  .box > .heading {
+    padding: 20px 20px 20px 0;
+    border-bottom: 1px solid #ddd; }
+    .box > .heading > .title {
+      border-left: 5px solid #4ec3ff;
+      padding-left: 2em;
+      margin: 0;
+      font-size: 14px; }
+      .box > .heading > .title .link-right {
+        float: right; }
+      .box > .heading > .title .box-toggle {
+        float: right;
+        cursor: pointer; }
+  .box > .box-inner {
+    padding: 20px;
+    transition: all 0.3s; }
+  .box.collapsed > .box-inner {
+    height: 0;
+    padding: 0;
+    overflow: hidden; }
+
+/* 全选复选框，以及对应的子复选框 */
+input[type=checkbox].all-cb, input[type=checkbox].child-cb {
+  width: 16px;
+  height: 16px; }
+
+/* 搜索表单样式 */
+.form-search {
+  margin-bottom: 20px;
+  overflow: hidden; }
+  .form-search .col-md-2, .form-search .col-sm-4, .form-search .col-xs-12 {
+    /*padding: 0;
+    margin-right: 5px;*/
+    margin-bottom: 8px;
+    padding: 0 10px; }
+  .form-search label {
+    margin-right: 5px; }
+  .form-search .form-group {
+    margin-bottom: 0; }
+  .form-search .form-group,
+  .form-search .form-control {
+    width: 100%; }
+  .form-search .btn-search {
+    margin-right: 10px; }
+
+/** ============== 网站的逻辑样式定义 ============== **/

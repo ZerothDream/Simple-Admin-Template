@@ -1,28 +1,7 @@
 @import "config";
 
 /** ============== 针对网站需求的逻辑样式定义 ============== **/
-.form-search {
-  margin-bottom: 20px;
-  overflow: hidden;
 
-  .col-md-2, .col-sm-4, .col-xs-12 {
-    /*padding: 0;
-    margin-right: 5px;*/
-    margin-bottom: 8px;
-  }
-
-  label {
-    margin-right: 5px;
-  }
-  .form-group,
-  .form-control {
-    width: 100%;
-  }
-
-  .btn-search {
-    margin-right: 15px;
-  }
-}
 
 
 

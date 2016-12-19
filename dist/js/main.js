@@ -166,6 +166,36 @@ $(function() {
 
 
     /**
+     * 默认选择器：.box .box-toggle
+     * 功能：展开和收起盒子
+     * @param opts
+     */
+    $.fn.initToggleBox = function(opts) {
+        var defaults = {
+            boxSelector: '.box',
+            collapsedClass: 'collapsed',
+            openIcon: '<i class="fa fa-chevron-up"></i>',
+            closeIcon: '<i class="fa fa-chevron-down"></i>'
+        };
+        var options = $.extend(defaults, opts);
+
+        var collapsed = options.collapsedClass;
+        var $self = $(this);
+        $self.on('click', function() {
+            var $this = $(this);
+            var $box = $this.parents(options.boxSelector);
+            if($box.hasClass(collapsed)) { // 盒子收起状态
+                $this.html(options.openIcon);
+                $box.removeClass(collapsed);
+            } else { // 盒子展开状态
+                $this.html(options.closeIcon);
+                $box.addClass(collapsed);
+            }
+        });
+    };
+
+
+    /**
      * 默认选择器：.input-daterange
      * 功能：使用DateRangePicker插件实现时间范围的选择
      * @param callback
@@ -235,7 +265,7 @@ $(function() {
     };
 
     /**
-     * 初始化复选框全选功能
+     * 功能：初始化复选框全选功能
      */
     $.fn.initCheckAll = function(opts) {
         var defaults = {
@@ -271,4 +301,6 @@ $(function() {
     $("[data-toggle='tooltip']").tooltip();
     // 初始化回到顶部按钮
     $('.scroll-to-top').initScrollToTop();
+    // 初始化盒子开关按钮
+    $('.box .box-toggle').initToggleBox();
 });
