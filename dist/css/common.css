@@ -14,89 +14,6 @@ ul, li {
   margin: 0;
   padding: 0; }
 
-/** ============== 覆盖Bootstrap中的样式 ============== **/
-/**
-* 路径导航
-*/
-.breadcrumb {
-  border-radius: 0;
-  background-color: white;
-  margin-bottom: 10px; }
-
-.input-group .input-group-addon {
-  border-radius: 0; }
-
-.alert,
-.form-control,
-.btn,
-.panel,
-.panel-heading,
-.modal .modal-content,
-.panel-group .panel,
-.nav-tabs > li > a,
-.nav-pills > li > a {
-  border-radius: 0; }
-
-/**
-* 下拉菜单
-*/
-.dropdown-menu {
-  border-radius: 0; }
-
-/**
-* 分页
-*/
-.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover,
-.pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
-  background-color: #4ec3ff;
-  border-color: #4ec3ff; }
-
-.pagination > li:first-child > a, .pagination > li:first-child > span,
-.pagination > li:last-child > a, .pagination > li:last-child > span {
-  border-radius: 0; }
-
-/**
-* 徽章
-*/
-.badge {
-  background-color: #4ec3ff; }
-  .badge.badge-terques {
-    background-color: #6ccac9; }
-  .badge.badge-yellow {
-    background-color: #f8d347; }
-  .badge.badge-red {
-    background-color: #ff6c60; }
-
-/**
-* 标签页
-*/
-.tab-content {
-  padding: 20px 10px; }
-
-/**
-* 胶囊式标签页
-*/
-.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus,
-.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
-  background-color: #4ec3ff; }
-
-/** ============== 覆盖Bootstrap中的样式 ============== **/
-/** ============== 覆盖插件中的样式 ============== **/
-.daterangepicker .input-mini,
-.daterangepicker .input-mini.active {
-  border-radius: 0; }
-
-/** ============== 覆盖插件中的样式 ============== **/
-/** ============== 基于Bootstrap中的样式组件定义 ============== **/
-.input-group-img .input-group-addon {
-  padding: 0;
-  height: 40px; }
-  .input-group-img .input-group-addon img {
-    min-height: 100%;
-    min-width: 100%;
-    height: 38px; }
-
-/** ============== 基于Bootstrap中的样式组件定义 ============== **/
 /** ============== 网站整体布局设置 ============== **/
 .navbar .navbar-header {
   float: left; }
@@ -311,6 +228,102 @@ ul, li {
     right: 30px; }
 
 /** ============== 网站整体布局设置 ============== **/
+/** ============== 覆盖Bootstrap中的样式 ============== **/
+/**
+* 路径导航
+*/
+.breadcrumb {
+  border-radius: 0;
+  background-color: white;
+  margin-bottom: 10px; }
+
+.input-group .input-group-addon {
+  border-radius: 0; }
+
+.alert,
+.form-control,
+.btn,
+.panel,
+.panel-heading,
+.modal .modal-content,
+.panel-group .panel,
+.nav-tabs > li > a,
+.nav-pills > li > a {
+  border-radius: 0; }
+
+/**
+* 下拉菜单
+*/
+.dropdown-menu {
+  border-radius: 0; }
+
+/**
+* 分页
+*/
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover,
+.pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  background-color: #4ec3ff;
+  border-color: #4ec3ff; }
+
+.pagination > li:first-child > a, .pagination > li:first-child > span,
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+  border-radius: 0; }
+
+/**
+* 徽章
+*/
+.badge {
+  background-color: #4ec3ff; }
+  .badge.badge-terques {
+    background-color: #6ccac9; }
+  .badge.badge-yellow {
+    background-color: #f8d347; }
+  .badge.badge-red {
+    background-color: #ff6c60; }
+
+/**
+* 标签页
+*/
+.tab-content {
+  padding: 20px 10px; }
+
+/**
+* 胶囊式标签页
+*/
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus,
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+  background-color: #4ec3ff; }
+
+/** ============== 覆盖Bootstrap中的样式 ============== **/
+/** ============== 覆盖插件中的样式 ============== **/
+.daterangepicker .input-mini,
+.daterangepicker .input-mini.active {
+  border-radius: 0; }
+
+/** ============== 覆盖插件中的样式 ============== **/
+/** ============== 基于Bootstrap中的样式组件定义 ============== **/
+.input-group-img .input-group-addon {
+  padding: 0;
+  height: 40px; }
+  .input-group-img .input-group-addon img {
+    min-height: 100%;
+    min-width: 100%;
+    height: 38px; }
+
+.table.table-center {
+  text-align: center; }
+  .table.table-center > thead > tr > th {
+    text-align: center; }
+
+.table.table-middle > thead > tr > th,
+.table.table-middle > tbody > tr > th,
+.table.table-middle > tfoot > tr > th,
+.table.table-middle > thead > tr > td,
+.table.table-middle > tbody > tr > td,
+.table.table-middle > tfoot > tr > td {
+  vertical-align: middle; }
+
+/** ============== 基于Bootstrap中的样式组件定义 ============== **/
 /** ============== 网站公共样式定义 ============== **/
 .padding {
   padding: 15px; }
