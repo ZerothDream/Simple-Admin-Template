@@ -467,7 +467,7 @@ input[type=checkbox].all-cb, input[type=checkbox].child-cb {
   width: 16px;
   height: 16px; }
 
-/* 搜索表单样式 */
+/* 搜索表单样式（无label） */
 .form-search {
   margin-bottom: 20px;
   overflow: hidden; }
@@ -485,5 +485,14 @@ input[type=checkbox].all-cb, input[type=checkbox].child-cb {
     width: 100%; }
   .form-search .btn-search {
     margin-right: 10px; }
+
+/* 搜索表单样式（有label） */
+.form-label-search {
+  margin-bottom: 20px; }
+  .form-label-search .control-label {
+    margin-right: 5px; }
+  .form-label-search .form-group {
+    margin-right: 8px;
+    margin-bottom: 8px; }
 
 /** ============== 网站的逻辑样式定义 ============== **/
