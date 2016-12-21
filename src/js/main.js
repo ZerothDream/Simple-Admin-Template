@@ -2,7 +2,7 @@
  * Created by admin on 2016/12/13.
  */
 
-$(function() {
+(function($) {
 
     /**
      * 默认选择器：.sidebar-menu
@@ -303,4 +303,4 @@ $(function() {
     $('.scroll-to-top').initScrollToTop();
     // 初始化盒子开关按钮
     $('.box .box-toggle').initToggleBox();
-});
+})(jQuery);
