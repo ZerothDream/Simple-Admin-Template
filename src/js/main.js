@@ -337,6 +337,7 @@
     // 使用示例
     /**
     * 功能：
+    * 应用：xxx.html、xxx.html
     */
     $('.temp').template();
 
