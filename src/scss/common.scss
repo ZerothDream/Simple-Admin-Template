@@ -461,6 +461,62 @@ ul, li {
 /** ============== 网站公共样式定义 ============== **/
 
 /** ============== 网站的逻辑样式定义 ============== **/
+
+/* 动画加载效果 */
+.loader {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+// 有点“微软”风的加载动画效果
+.loader-01 {
+    position:relative;
+    width: 42px;
+    height: 42px;
+    /*animation: loader_01 5s infinite linear;*/
+}
+.loader-01 span {
+    width:20px;
+    height:20px;
+    position:absolute;
+    background:red;
+    display:block;
+    animation: loader_01_span 1s infinite linear;
+    
+    &:nth-child(1) {
+        background:#2ecc71;    
+    }
+    &:nth-child(2) {
+        left:22px;
+        background:#9b59b6;
+        animation-delay: .2s;
+    }
+    &:nth-child(3) {
+        top:22px;
+        background:#3498db;
+        animation-delay: .4s;        
+    }
+    &:nth-child(4) {
+        top:22px;
+        left:22px;
+        background:#f1c40f;
+        animation-delay: .6s;
+    }
+}
+@keyframes loader_01 {
+	0%{transform:rotate(0deg);}
+	50%{transform:rotate(180deg);}
+	100%{transform:rotate(360deg);}
+}
+@keyframes loader_01_span {
+   0% { transform:scale(1); }
+   50% { transform:scale(0.5); }
+   100% { transform:scale(1); }
+}
+
+
 /* 盒子 */
 .box {
   background-color: white;
@@ -678,6 +734,7 @@ input[type=checkbox] {
 /* 搜索表单样式（有label） */
 .form-label-search {
   margin-bottom: 20px;
+  overflow: hidden;
   .control-label {
     margin-right: 5px;
   }

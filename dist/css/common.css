@@ -351,6 +351,62 @@ ul, li {
 
 /** ============== 网站公共样式定义 ============== **/
 /** ============== 网站的逻辑样式定义 ============== **/
+/* 动画加载效果 */
+.loader {
+  text-align: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 300px; }
+
+.loader-01 {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  /*animation: loader_01 5s infinite linear;*/ }
+
+.loader-01 span {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background: red;
+  display: block;
+  animation: loader_01_span 1s infinite linear; }
+  .loader-01 span:nth-child(1) {
+    background: #2ecc71; }
+  .loader-01 span:nth-child(2) {
+    left: 22px;
+    background: #9b59b6;
+    animation-delay: .2s; }
+  .loader-01 span:nth-child(3) {
+    top: 22px;
+    background: #3498db;
+    animation-delay: .4s; }
+  .loader-01 span:nth-child(4) {
+    top: 22px;
+    left: 22px;
+    background: #f1c40f;
+    animation-delay: .6s; }
+
+@keyframes loader_01 {
+  0% {
+    transform: rotate(0deg); }
+  50% {
+    transform: rotate(180deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+@keyframes loader_01_span {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(0.5); }
+  100% {
+    transform: scale(1); } }
+
 /* 盒子 */
 .box {
   background-color: white;
@@ -488,7 +544,8 @@ input[type=checkbox].all-cb, input[type=checkbox].child-cb {
 
 /* 搜索表单样式（有label） */
 .form-label-search {
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  overflow: hidden; }
   .form-label-search .control-label {
     margin-right: 5px; }
   .form-label-search .form-group {

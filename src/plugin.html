@@ -8,6 +8,7 @@
 
     <!-- Bootstrap -->
     <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/toastr/toastr.min.css">
     <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/main.css">
@@ -100,7 +101,7 @@
                     <li class="sub-menu-item"><a href="animate.html">动画</a></li>
                 </ul>
             </li>
-            <li class="menu-item">
+            <li class="menu-item actived">
                 <a href="plugin.html"><i class="fa fa-key" aria-hidden="true"></i>插件应用</a>
             </li>
             <li class="menu-item">
@@ -110,7 +111,7 @@
                     <li class="sub-menu-item"><a href="table.html">表格</a></li>
                 </ul>
             </li>
-            <li class="menu-item actived">
+            <li class="menu-item">
                 <a href="javascript:void(0)"><i class="fa fa-tag" aria-hidden="true"></i>更多页面 <span class="badge">4</span></a>
                 <ul class="sub-menu-list">
                     <li class="sub-menu-item"><a href="blank.html">空白页面</a></li>
@@ -139,17 +140,29 @@
     <div class="main-container">
         <div class="padding">
             <ol class="breadcrumb">
-                <li><a href="index.html">导航1</a></li>
-                <li>导航2</li>
-                <li class="active">导航3</li>
+                <li><a href="index.html">首页</a></li>
+                <li class="active">插件应用</li>
             </ol>
             <div class="box">
                 <div class="heading">
-                    <h3 class="title">标题<a href="#" class="link-right"></a></h3>
+                    <h3 class="title">jquery通知插件toastr</h3>
                 </div>
 
                 <div class="box-inner">
-
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <button class="btn btn-info">显示Info Toastr提示</button>
+                        </div>
+                        <div class="col-xs-3">
+                            <button class="btn btn-warning">显示Warning Toastr提示</button>
+                        </div>
+                        <div class="col-xs-3">
+                            <button class="btn btn-success">显示Success Toastr提示</button>
+                        </div>
+                        <div class="col-xs-3">
+                            <button class="btn btn-danger">显示Error Toastr提示</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -165,6 +178,31 @@
 
 <script src="./assets/jquery/jquery-3.1.1.min.js"></script>
 <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="./assets/toastr/toastr.min.js"></script>
 <script src="./js/main.js"></script>
+<script>
+    $(function() {
+       
+        (function() {
+            $('.btn-info').on('click', function() {
+                toastr.info('这个是toastr的info消息！');
+            });
+            
+            $('.btn-warning').on('click', function() {
+                toastr.warning('这个是toastr的warning消息！');
+            });
+            
+            $('.btn-success').on('click', function() {
+                toastr.success('这个是toastr的success消息！');
+            });
+            
+            $('.btn-danger').on('click', function() {
+                toastr.error('这个是toastr的error消息！');
+            });
+            
+        })();
+        
+    });
+</script>
 </body>
 </html>

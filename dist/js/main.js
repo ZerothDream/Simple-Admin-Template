@@ -2,6 +2,48 @@
  * Created by admin on 2016/12/13.
  */
 
+/** ============== 第三方JS的预定义及配置 ============== **/
+(function($) {
+    // 配置模板
+    /**
+    * 名称：
+    * 功能：
+    * 依赖：xxx.min.css、xxx.min.js
+    */
+    (function() {
+        
+    })();
+    
+    /**
+    * 名称：jquery通知提示插件toastr
+    * 功能：jquery通知提示插件toastr的初始化配置
+    * 依赖：toastr.min.css、toastr.min.js
+    */
+    (function() {
+        var toastr = toastr || {};
+        if(toastr) {
+            toastr.options = {
+                closeButton: true,
+                debug: false, 
+                progressBar: false,
+                positionClass: "toast-top-right",
+                onclick: null,
+                showDuration: "300",
+                hideDuration: "1000",
+                timeOut: "5000",
+                extendedTimeOut: "1000",
+                showEasing: "swing",
+                hideEasing: "linear",
+                showMethod: "fadeIn",
+                hideMethod: "fadeOut"
+            };  
+        }
+    })();
+    
+})(jQuery);
+/** ============== 第三方JS的预定义及配置 ============== **/
+
+/** ============== 网站基础JS组件定义及应用 ============== **/
 (function($) {
 
     /**
