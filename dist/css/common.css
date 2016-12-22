@@ -248,7 +248,8 @@ ul, li {
 .modal .modal-content,
 .panel-group .panel,
 .nav-tabs > li > a,
-.nav-pills > li > a {
+.nav-pills > li > a,
+.img-thumbnail {
   border-radius: 0; }
 
 /**
@@ -366,7 +367,7 @@ ul, li {
   position: relative;
   width: 42px;
   height: 42px;
-  /*animation: loader_01 5s infinite linear;*/ }
+  animation: loader_01 5s infinite linear; }
 
 .loader-01 span {
   width: 20px;
@@ -446,6 +447,7 @@ ul, li {
     padding: 0; }
   .box > .box-inner {
     padding: 20px;
+    overflow: hidden;
     transition: all 0.3s; }
   .box.collapsed > .box-inner {
     height: 0;

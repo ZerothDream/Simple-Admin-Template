@@ -339,7 +339,8 @@ ul, li {
 .modal .modal-content,
 .panel-group .panel,
 .nav-tabs>li>a,
-.nav-pills>li>a {
+.nav-pills>li>a,
+.img-thumbnail {
   border-radius: 0;
 }
 /**
@@ -579,6 +580,7 @@ ul, li {
 
   &>.box-inner {
     padding: 20px;
+    overflow: hidden;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;

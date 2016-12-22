@@ -20,8 +20,7 @@
     * 依赖：toastr.min.css、toastr.min.js
     */
     (function() {
-        var toastr = toastr || {};
-        if(toastr) {
+        try {
             toastr.options = {
                 closeButton: true,
                 debug: false, 
@@ -36,7 +35,9 @@
                 hideEasing: "linear",
                 showMethod: "fadeIn",
                 hideMethod: "fadeOut"
-            };  
+            };
+        } catch(err) {
+            console.warn(err);
         }
     })();
     
@@ -245,47 +246,51 @@
     $.fn.setDateRangePicker = function(callback) {
 
         var $this = $(this);
-        $this.daterangepicker({
-            "locale": {
-                "format": "YYYY/MM/DD",
-                "separator": " - ",
-                "applyLabel": "确定",
-                "cancelLabel": "取消",
-                "fromLabel": "From",
-                "toLabel": "To",
-                "customRangeLabel": "Custom",
-                "weekLabel": "W",
-                "daysOfWeek": [
-                    "日",
-                    "一",
-                    "二",
-                    "三",
-                    "四",
-                    "五",
-                    "六"
-                ],
-                "monthNames": [
-                    "一月",
-                    "二月",
-                    "三月",
-                    "四月",
-                    "五月",
-                    "六月",
-                    "七月",
-                    "八月",
-                    "九月",
-                    "十月",
-                    "十一月",
-                    "十二月"
-                ],
-                "firstDay": 1
-            },
-            "applyClass": "btn-success btn-flat",
-            "cancelClass": "btn-default no-border-radius"
-        }, function(start, end, label) {
-            // console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
-            // console.log(start, end, label);
-        });
+        try {
+            $this.daterangepicker({
+                "locale": {
+                    "format": "YYYY/MM/DD",
+                    "separator": " - ",
+                    "applyLabel": "确定",
+                    "cancelLabel": "取消",
+                    "fromLabel": "From",
+                    "toLabel": "To",
+                    "customRangeLabel": "Custom",
+                    "weekLabel": "W",
+                    "daysOfWeek": [
+                        "日",
+                        "一",
+                        "二",
+                        "三",
+                        "四",
+                        "五",
+                        "六"
+                    ],
+                    "monthNames": [
+                        "一月",
+                        "二月",
+                        "三月",
+                        "四月",
+                        "五月",
+                        "六月",
+                        "七月",
+                        "八月",
+                        "九月",
+                        "十月",
+                        "十一月",
+                        "十二月"
+                    ],
+                    "firstDay": 1
+                },
+                "applyClass": "btn-success btn-flat",
+                "cancelClass": "btn-default no-border-radius"
+            }, function(start, end, label) {
+                // console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+                // console.log(start, end, label);
+            });
+        } catch(err) {
+            console.warn(err);
+        }
 
         $this.val('');
         $this.on('blur', function() {
@@ -346,6 +351,18 @@
     // 初始化盒子开关按钮
     $('.box .box-toggle').initToggleBox();
 })(jQuery);
+/** ============== 网站基础JS组件定义及应用 ============== **/
+
+
+/** ============== 针对网站需求的公共函数定义 ============== **/
+/**
+* 功能：xxx
+*/
+function templateFn() {
+    
+}
+
+/** ============== 针对网站需求的公共函数定义 ============== **/
 
 
 /** ============== 针对网站需求的逻辑JS组件定义 ============== **/
