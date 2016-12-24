@@ -341,7 +341,9 @@
         
         // 是否行被点击也可以选中
         if(options.trCanSelected) {
-            $childs.parents('tr').on('click', function() {
+            var $tr = $childs.parents('tr');
+            
+            $tr.on('click', function() {
                 var $cb = $(this).find(options.childSelector); 
                 $cb.prop('checked', !$cb.prop('checked'));
                 
@@ -351,6 +353,11 @@
                 } else {
                     $self.prop('checked', false);
                 }   
+            });
+            
+            // a 元素阻止事件冒泡
+            $tr.find('a').on('click', function(e) {
+                e.stopPropagation();
             });
         }
     };
