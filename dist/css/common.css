@@ -527,7 +527,7 @@ input[type=checkbox].all-cb, input[type=checkbox].child-cb {
 
 /* 搜索表单样式（无label） */
 .form-search {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   overflow: hidden; }
   .form-search .col-md-2, .form-search .col-sm-4, .form-search .col-xs-12 {
     /*padding: 0;
@@ -546,7 +546,7 @@ input[type=checkbox].all-cb, input[type=checkbox].child-cb {
 
 /* 搜索表单样式（有label） */
 .form-label-search {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   overflow: hidden; }
   .form-label-search .control-label {
     margin-right: 5px; }
