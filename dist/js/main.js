@@ -316,7 +316,8 @@
      */
     $.fn.initCheckAll = function(opts) {
         var defaults = {
-            childSelector: '.child-cb'
+            childSelector: '.child-cb',
+            trCanSelected: true // 是否行被点击也可以选中
         };
         var options = $.extend(defaults, opts);
 
@@ -328,16 +329,30 @@
             $childs.prop('checked', $(this).prop('checked'));
         });
 
-        $childs.on('click', function() {
+        $childs.on('click', function(e) {
+            e.stopPropagation();
             var $checkedChilds = $(options.childSelector + ':checked');
-            console.log(childsLen, $checkedChilds.length);
             if(childsLen == $checkedChilds.length) {
                 $self.prop('checked', true);
             } else {
                 $self.prop('checked', false);
             }
         });
-
+        
+        // 是否行被点击也可以选中
+        if(options.trCanSelected) {
+            $childs.parents('tr').on('click', function() {
+                var $cb = $(this).find(options.childSelector); 
+                $cb.prop('checked', !$cb.prop('checked'));
+                
+                var $checkedChilds = $(options.childSelector + ':checked');
+                if(childsLen == $checkedChilds.length) {
+                    $self.prop('checked', true);
+                } else {
+                    $self.prop('checked', false);
+                }   
+            });
+        }
     };
 
     // 初始化侧边导航栏
