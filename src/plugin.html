@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/plugin.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -102,7 +103,11 @@
                 </ul>
             </li>
             <li class="menu-item actived">
-                <a href="plugin.html"><i class="fa fa-key" aria-hidden="true"></i>插件应用</a>
+                <a href="javascript:void(0)"><i class="fa fa-key" aria-hidden="true"></i>插件应用</a>
+                <ul class="sub-menu-list">
+                    <li class="sub-menu-item"><a href="jq-plugin.html">jQuery插件</a></li>
+                    <li class="sub-menu-item"><a href="plugin.html">我的插件</a></li>
+                </ul>
             </li>
             <li class="menu-item">
                 <a href="javascript:void(0)"><i class="fa fa-book" aria-hidden="true"></i>其他页面</a>
@@ -141,26 +146,109 @@
         <div class="padding">
             <ol class="breadcrumb">
                 <li><a href="index.html">首页</a></li>
-                <li class="active">插件应用</li>
+                <li>插件应用</li>
+                <li class="active">我的插件</li>
             </ol>
             <div class="box">
                 <div class="heading">
-                    <h3 class="title">jquery通知插件toastr</h3>
+                    <h3 class="title">提示</h3>
                 </div>
 
                 <div class="box-inner">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <button class="btn btn-info">显示Info Toastr提示</button>
+                    <p>注意：由于这里的功能不是必须的，所以也不一定要引入plugin.js和plugin.css。
+                        在有需要的情况下可以引入，也可以只抽取部分插件的js和css，可自行定制，无需考虑太多。
+                    </p>
+                </div>
+            </div>
+
+            <div class="box" style="margin-bottom: 0;">
+                <div class="heading">
+                    <h3 class="title">弹出侧边栏（右）</h3>
+                </div>
+
+                <div class="box-inner">
+                    <button class="btn btn-primary" id="btn-show-sidebar-right">弹出右侧菜单栏</button>
+                </div>
+            </div>
+            <div class="box box-tabs-inline">
+                <div class="heading">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#html-sidebar-right" role="tab" data-toggle="tab" aria-controls="html" aria-expanded="true">HTML</a></li>
+                        <li role="presentation"><a href="#sass-sidebar-right" role="tab" data-toggle="tab" aria-controls="sass">SASS</a></li>
+                        <li role="presentation"><a href="#js-sidebar-right" role="tab" data-toggle="tab" aria-controls="js">JS</a></li>
+                    </ul>
+
+                    <span class="box-toggle"><i class="fa fa-chevron-up"></i></span>
+                </div>
+
+                <div class="box-inner">
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="html-sidebar-right" aria-labelledby="home-tab">
+                            <pre><xmp>
+<div class="sidebar-right">
+    <div class="mask"></div>
+    <div class="box">
+        <div class="box-inner">
+            <div class="list-group">
+                <a href="#" class="list-group-item">Cras justo odio</a>
+                <a href="#" class="list-group-item active">Dapibus ac facilisis in</a>
+                <a href="#" class="list-group-item">Morbi leo risus</a>
+                <a href="#" class="list-group-item">Morbi leo risus</a>
+                <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                <a href="#" class="list-group-item">Vestibulum at eros</a>
+                <a href="#" class="list-group-item">Vestibulum at eros</a>
+            </div>
+        </div>
+    </div>
+</div>
+                            </xmp></pre>
                         </div>
-                        <div class="col-xs-3">
-                            <button class="btn btn-warning">显示Warning Toastr提示</button>
+                        <div role="tabpanel" class="tab-pane fade" id="sass-sidebar-right" aria-labelledby="sass-tab">
+                            <pre><xmp>
+.sidebar-right {
+  .mask {
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+
+    transition: all 0.5s;
+  }
+
+  .box {
+    margin-bottom: 0;
+    transform: translateX(100%);
+    position: fixed;
+    top: 50px;
+    right: 0;
+    bottom: 0;
+    width: auto;
+
+    transition: all 0.5s;
+  }
+
+  &.actived {
+    .mask {
+      opacity: 1;
+      visibility: visible;
+    }
+    .box {
+      transform: translateX(0);
+    }
+  }
+}
+                            </xmp></pre>
                         </div>
-                        <div class="col-xs-3">
-                            <button class="btn btn-success">显示Success Toastr提示</button>
-                        </div>
-                        <div class="col-xs-3">
-                            <button class="btn btn-danger">显示Error Toastr提示</button>
+                        <div role="tabpanel" class="tab-pane fade" id="js-sidebar-right" aria-labelledby="js-tab">
+                            <pre><xmp>
+// 引入plugin.js中的 showRightSidebar插件方法，并进行调用
+$('#btn-show-sidebar-right').showRightSidebar();
+                            </xmp></pre>
                         </div>
                     </div>
                 </div>
@@ -176,32 +264,34 @@
 
 <div class="scroll-to-top"><i class="fa fa-chevron-up fa-lg"></i></div>
 
+<div class="sidebar-right">
+    <div class="mask"></div>
+    <div class="box">
+        <div class="box-inner">
+            <div class="list-group">
+                <a href="#" class="list-group-item">Cras justo odio</a>
+                <a href="#" class="list-group-item active">Dapibus ac facilisis in</a>
+                <a href="#" class="list-group-item">Morbi leo risus</a>
+                <a href="#" class="list-group-item">Morbi leo risus</a>
+                <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                <a href="#" class="list-group-item">Vestibulum at eros</a>
+                <a href="#" class="list-group-item">Vestibulum at eros</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="./assets/jquery/jquery-3.1.1.min.js"></script>
 <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="./assets/toastr/toastr.min.js"></script>
 <script src="./js/main.js"></script>
+
+<script src="./js/plugin.js"></script>
+
 <script>
     $(function() {
-       
-        (function() {
-            $('.btn-info').on('click', function() {
-                toastr.info('这个是toastr的info消息！');
-            });
-            
-            $('.btn-warning').on('click', function() {
-                toastr.warning('这个是toastr的warning消息！');
-            });
-            
-            $('.btn-success').on('click', function() {
-                toastr.success('这个是toastr的success消息！');
-            });
-            
-            $('.btn-danger').on('click', function() {
-                toastr.error('这个是toastr的error消息！');
-            });
-            
-        })();
-        
+        $('#btn-show-sidebar-right').showRightSidebar();
     });
 </script>
 </body>

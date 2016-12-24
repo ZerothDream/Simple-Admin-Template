@@ -1,0 +1,1 @@
+.sidebar-right .mask{left:0;background-color:rgba(0,0,0,.5);visibility:hidden;opacity:0}.sidebar-right .box,.sidebar-right .mask{position:fixed;top:50px;bottom:0;right:0;transition:all .5s}.sidebar-right .box{margin-bottom:0;transform:translateX(100%);width:auto}.sidebar-right.actived .mask{opacity:1;visibility:visible}.sidebar-right.actived .box{transform:translateX(0)}

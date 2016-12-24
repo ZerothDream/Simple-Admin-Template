@@ -13,6 +13,17 @@ ul, li {
   padding: 0;
 }
 
+xmp {
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+  font-size: inherit;
+  color: #333;
+  margin: 0;
+}
+
 /** ============== 网站整体布局设置 ============== **/
 // 顶部导航
 .navbar {
@@ -331,6 +342,8 @@ ul, li {
 .input-group .input-group-addon {
   border-radius: 0;
 }
+
+pre,
 .alert,
 .form-control,
 .btn,
@@ -340,7 +353,9 @@ ul, li {
 .panel-group .panel,
 .nav-tabs>li>a,
 .nav-pills>li>a,
-.img-thumbnail {
+.img-thumbnail,
+.list-group-item:first-child,
+.list-group-item:last-child {
   border-radius: 0;
 }
 /**
@@ -747,3 +762,9 @@ input[type=checkbox] {
 }
 
 /** ============== 网站的逻辑样式定义 ============== **/
+
+
+/** ============== 网站的插件样式定义 ============== **/
+
+
+/** ============== 网站的插件样式定义 ============== **/

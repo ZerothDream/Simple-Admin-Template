@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Simple Admin-收件箱</title>
+    <title>Simple Admin-空白页面</title>
 
     <!-- Bootstrap -->
     <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/toastr/toastr.min.css">
     <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/main.css">
@@ -100,14 +101,14 @@
                     <li class="sub-menu-item"><a href="animate.html">动画</a></li>
                 </ul>
             </li>
-            <li class="menu-item">
+            <li class="menu-item actived">
                 <a href="javascript:void(0)"><i class="fa fa-key" aria-hidden="true"></i>插件应用</a>
                 <ul class="sub-menu-list">
                     <li class="sub-menu-item"><a href="jq-plugin.html">jQuery插件</a></li>
                     <li class="sub-menu-item"><a href="plugin.html">我的插件</a></li>
                 </ul>
             </li>
-            <li class="menu-item actived">
+            <li class="menu-item">
                 <a href="javascript:void(0)"><i class="fa fa-book" aria-hidden="true"></i>其他页面</a>
                 <ul class="sub-menu-list">
                     <li class="sub-menu-item"><a href="inbox.html">收件箱</a></li>
@@ -144,115 +145,29 @@
         <div class="padding">
             <ol class="breadcrumb">
                 <li><a href="index.html">首页</a></li>
-                <li>其他页面</li>
-                <li class="active">收件箱</li>
+                <li>插件应用</li>
+                <li class="active">jQuery插件</li>
             </ol>
             <div class="box">
                 <div class="heading">
-                    <h3 class="title">收件箱</h3>
+                    <h3 class="title">jquery通知插件toastr</h3>
                 </div>
 
                 <div class="box-inner">
-                    <!-- Split button -->
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-default">标记为...</button>
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                            <span class="caret"></span>
-                            <span class="sr-only">Toggle Dropdown</span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">已读</a></li>
-                            <li><a href="#">未读</a></li>
-                        </ul>
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <button class="btn btn-info">显示Info Toastr提示</button>
+                        </div>
+                        <div class="col-xs-3">
+                            <button class="btn btn-warning">显示Warning Toastr提示</button>
+                        </div>
+                        <div class="col-xs-3">
+                            <button class="btn btn-success">显示Success Toastr提示</button>
+                        </div>
+                        <div class="col-xs-3">
+                            <button class="btn btn-danger">显示Error Toastr提示</button>
+                        </div>
                     </div>
-                    <div class="separator-10"></div>
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                            <tr>
-                                <th><input type="checkbox" class="all-cb"></th>
-                                <th>公告标题</th>
-                                <th>发布日期</th>
-                                <th>状态</th>
-                                <th>操作</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td><input type="checkbox" class="child-cb"></td>
-                                <td>Mark</td>
-                                <td>2016-12-14 14:13</td>
-                                <td><span class="label label-info">已读</span></td>
-                                <td>
-                                    <a href="inbox-detail.html">查看</a>
-                                    <a href="#" data-url="这里放一个删除链接" class="link-show-confirm">删除</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="child-cb"></td>
-                                <td>Jacob</td>
-                                <td>2016-12-13 10:13</td>
-                                <td><span class="label label-danger">未读</span></td>
-                                <td>
-                                    <a href="#">查看</a>
-                                    <a href="#">删除</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="child-cb"></td>
-                                <td>Larry</td>
-                                <td>2016-12-13 12:14</td>
-                                <td><span class="label label-info">已读</span></td>
-                                <td>
-                                    <a href="#">查看</a>
-                                    <a href="#">删除</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="child-cb"></td>
-                                <td>Larry</td>
-                                <td>2016-12-13 12:14</td>
-                                <td><span class="label label-info">已读</span></td>
-                                <td>
-                                    <a href="#">查看</a>
-                                    <a href="#">删除</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="child-cb"></td>
-                                <td>Larry</td>
-                                <td>2016-12-13 12:14</td>
-                                <td><span class="label label-info">已读</span></td>
-                                <td>
-                                    <a href="#">查看</a>
-                                    <a href="#">删除</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="child-cb"></td>
-                                <td>Jacob</td>
-                                <td>2016-12-13 10:13</td>
-                                <td><span class="label label-danger">未读</span></td>
-                                <td>
-                                    <a href="#">查看</a>
-                                    <a href="#">删除</a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <nav class="text-center">
-                        <ul class="pagination">
-                            <li><a href="#">&laquo;</a></li>
-                            <li><a href="#">1</a></li>
-                            <li class="active"><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">&raquo;</a></li>
-                        </ul>
-                    </nav>
                 </div>
             </div>
 
@@ -266,41 +181,32 @@
 
 <div class="scroll-to-top"><i class="fa fa-chevron-up fa-lg"></i></div>
 
-<!-- Modal -->
-<div class="modal fade" id="modal-confirm">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title">Confirm</h4>
-            </div>
-            <div class="modal-body">
-                <p style="text-indent: 2em;">Are you sure？</p>
-                <input type="hidden">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary modal-btn-sure">确定</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <script src="./assets/jquery/jquery-3.1.1.min.js"></script>
 <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="./assets/toastr/toastr.min.js"></script>
 <script src="./js/main.js"></script>
 <script>
     $(function() {
-        $('.all-cb').initCheckAll();
-
-        $('.link-show-confirm').showConfirm({
-            success: function(url) {
-                console.log(url);
-            },
-            error: function(error) {
-                console.log(error);
-            }
-        });
+       
+        (function() {
+            $('.btn-info').on('click', function() {
+                toastr.info('这个是toastr的info消息！');
+            });
+            
+            $('.btn-warning').on('click', function() {
+                toastr.warning('这个是toastr的warning消息！');
+            });
+            
+            $('.btn-success').on('click', function() {
+                toastr.success('这个是toastr的success消息！');
+            });
+            
+            $('.btn-danger').on('click', function() {
+                toastr.error('这个是toastr的error消息！');
+            });
+            
+        })();
+        
     });
 </script>
 </body>
