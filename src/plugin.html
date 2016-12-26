@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Simple Admin-空白页面</title>
+    <title>Simple Admin-我的插件</title>
 
     <!-- Bootstrap -->
     <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -149,7 +149,7 @@
                 <li>插件应用</li>
                 <li class="active">我的插件</li>
             </ol>
-            <div class="box">
+            <div class="box" id="box-fix">
                 <div class="heading">
                     <h3 class="title">提示</h3>
                 </div>
@@ -161,6 +161,67 @@
                 </div>
             </div>
 
+            <div class="box" id="box-refer" style="margin-bottom: 0;">
+                <div class="heading">
+                    <h3 class="title">固定盒子</h3>
+                </div>
+                <div class="box-inner">
+                    <button class="btn btn-primary" id="btn-fix-box">固定“提示”</button>
+                    <button class="btn btn-danger" id="btn-cancel-fix">取消固定</button>
+                </div>
+            </div>
+            <div class="box box-tabs-inline">
+                <div class="heading">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#html-fix-box" role="tab" data-toggle="tab" aria-controls="html" aria-expanded="true">HTML</a></li>
+                        <li role="presentation"><a href="#sass-fix-box" role="tab" data-toggle="tab" aria-controls="sass">SASS</a></li>
+                        <li role="presentation"><a href="#js-fix-box" role="tab" data-toggle="tab" aria-controls="js">JS</a></li>
+                    </ul>
+
+                    <span class="box-toggle"><i class="fa fa-chevron-up"></i></span>
+                </div>
+
+                <div class="box-inner">
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="html-fix-box" aria-labelledby="home-tab">
+                            <pre><xmp>
+                            </xmp></pre>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="sass-fix-box" aria-labelledby="sass-tab">
+                            <pre><xmp>
+                            </xmp></pre>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="js-fix-box" aria-labelledby="js-tab">
+                            <pre><xmp>
+// 引入plugin.js中的 fixBox 插件方法，并进行调用
+var cancel;
+$('.wrapper').fixBox({
+    selector: '#box-fix',
+    getTop: function($box) {
+        return $('.navbar').height() + 15;
+    },
+    getScrollTopLimit: function($box) {
+        // 参考的对象 —— 这里相对于“面包屑”
+        $refer = $('.breadcrumb');
+        return $refer.offset().top - $('.navbar').height() + $refer.outerHeight();
+    },
+    getWidth: function($box) {
+        return $('#box-refer').outerWidth();
+    },
+    cancel: function(fn) {
+        cancel = fn;
+    }
+});
+// 调用 cancel 方法取消固定
+if(cancel) {
+    cancel();
+}
+                            </xmp></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="box" style="margin-bottom: 0;">
                 <div class="heading">
                     <h3 class="title">弹出侧边栏（右）</h3>
@@ -292,6 +353,35 @@ $('#btn-show-sidebar-right').showRightSidebar();
 <script>
     $(function() {
         $('#btn-show-sidebar-right').showRightSidebar();
+        
+        (function() {
+            var cancel;
+            $('#btn-fix-box').on('click', function() {
+                $('.wrapper').fixBox({
+                    selector: '#box-fix',
+                    getTop: function($box) {
+                        return $('.navbar').height() + 15;
+                    },
+                    getScrollTopLimit: function($box) {
+                        // 参考的对象 —— 这里相对于“面包屑”
+                        $refer = $('.breadcrumb');
+                        return $refer.offset().top - $('.navbar').height() + $refer.outerHeight();
+                    },
+                    getWidth: function($box) {
+                        return $('#box-refer').outerWidth();
+                    },
+                    cancel: function(fn) {
+                        cancel = fn;
+                    }
+                });        
+            });
+            
+            $('#btn-cancel-fix').on('click', function() {
+                if(cancel) {
+                    cancel();
+                }
+            });
+        })();
     });
 </script>
 </body>
