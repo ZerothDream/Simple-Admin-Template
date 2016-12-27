@@ -1,31 +1,31 @@
 @charset "UTF-8";
 /** sidebar-right 插件 */
-.sidebar-right .mask {
-  position: fixed;
-  top: 50px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.5s; }
-
-.sidebar-right .box {
-  margin-bottom: 0;
-  transform: translateX(100%);
-  position: fixed;
-  top: 50px;
-  right: 0;
-  bottom: 0;
-  width: auto;
-  transition: all 0.5s; }
-
-.sidebar-right.actived .mask {
-  opacity: 1;
-  visibility: visible; }
-
-.sidebar-right.actived .box {
-  transform: translateX(0); }
+.sidebar-right {
+  position: relative;
+  z-index: 101; }
+  .sidebar-right .mask {
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s; }
+  .sidebar-right .box {
+    margin-bottom: 0;
+    transform: translateX(100%);
+    position: fixed;
+    top: 50px;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    transition: all 0.5s; }
+  .sidebar-right.actived .mask {
+    opacity: 1;
+    visibility: visible; }
+  .sidebar-right.actived .box {
+    transform: translateX(0); }
 
 /** sidebar-right 插件 */

@@ -430,7 +430,10 @@ pre,
   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   /*min-height: 200px;*/
-  overflow: auto; }
+  overflow: auto;
+  /*&.box-fixed {
+    position: fixed;
+  }*/ }
   .box > .heading {
     /*padding: 20px 20px 20px 0;*/
     border-bottom: 1px solid #ddd; }

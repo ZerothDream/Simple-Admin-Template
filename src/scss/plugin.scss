@@ -1,5 +1,8 @@
 /** sidebar-right 插件 */
 .sidebar-right {
+  position: relative;
+  z-index: 101;
+  
   .mask {
     position: fixed;
     top: 50px;
