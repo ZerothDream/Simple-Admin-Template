@@ -198,7 +198,7 @@ var cancel;
 $('.wrapper').fixBox({
     selector: '#box-fix',
     getTop: function($box) {
-        return $('.navbar').height() + 15;
+        return $('.navbar').height()/* + 15*/;
     },
     getScrollTopLimit: function($box) {
         // 参考的对象 —— 这里相对于“面包屑”
@@ -360,7 +360,7 @@ $('#btn-show-sidebar-right').showRightSidebar();
                 $('.wrapper').fixBox({
                     selector: '#box-fix',
                     getTop: function($box) {
-                        return $('.navbar').height() + 15;
+                        return $('.navbar').height()/* + 15*/;
                     },
                     getScrollTopLimit: function($box) {
                         // 参考的对象 —— 这里相对于“面包屑”
