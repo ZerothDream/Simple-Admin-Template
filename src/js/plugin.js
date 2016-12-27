@@ -34,40 +34,7 @@
 
 })(jQuery);
 
-(function($) {
-
-    /**
-     * 默认选择器：
-     * 样式：
-     * 条件：选择需要固定的div，调用该方法执行
-     * 功能：当滚动条向下滚动到某个位置时，就让当前对象fixed住。不让其继续向上滑动。
-     * @param opts
-     */
-    $.fn.fixedScroll = function(opts) {
-        var defaults = {
-            obj: $(window), // 监听滚动的对象，默认window
-            getScrollTopLimit: function($self) { // $self 参数为当前jQuery形式的对象
-                return 0;
-            }, // 获取滚动条向下滚动的最大值，当超过该值 当前对象 就会被fixed住。
-            getWidth: function($self) { // $self 参数为当前jQuery形式的对象
-                return 'auto';
-            } // 获取 当前对象被fixed住后的宽度
-        };
-        var options = $.extend(defaults, opts);
-
-        // 具体逻辑定义
-        var $self = $(this);
-        var $body = $('.wrapper');
-        console.log($body);
-        $body.on('scroll', function() {
-            if(options.getScrollTopLimit) {
-                console.log(options.getScrollTopLimit($self));
-            }
-        });
-        
-        
-    };
-    
+(function($) {    
     
     /**
      * 默认选择器：
@@ -115,7 +82,9 @@
         
         var $next = $obj.next();
         var initMarginTopOfNext = parseInt($next.css('margin-top')) || 0;
-        var cloneHeight = initMarginTopOfNext + parseInt($obj.css('margin-top')) + $obj.outerHeight() + parseInt($obj.css('margin-bottom'));
+        var objMarginBottom = parseInt($obj.css('margin-bottom')) || 0;
+        var marginBottom = initMarginTopOfNext > objMarginBottom ? initMarginTopOfNext : objMarginBottom; // 上下外边距坍塌问题
+        var cloneHeight = parseInt($obj.css('margin-top')) + $obj.outerHeight() + marginBottom;
         
         var fnFix = function() {
             if(!isFixed) {
@@ -167,6 +136,7 @@
         var $win = $(window);
         $win.on('resize', fnResize);
         
+        // 返回一个取消固定的回调方法
         if(options.cancel) {
             options.cancel(function() {
                 fnCancelFix();
